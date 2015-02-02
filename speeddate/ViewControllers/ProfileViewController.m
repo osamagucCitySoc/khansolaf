@@ -16,7 +16,7 @@
 #import "RageIAPHelper.h"
 #import <StoreKit/StoreKit.h>
 
-#define DEFAULT_DESCRIPTION  @"Please fill information about you"
+#define DEFAULT_DESCRIPTION  @"برجاء قم بإدخال معلوماتك حتى يتم العثور على أصدقاء وصديقات متوافقين معك."
 #define MAXLENGTH 125
 #define MAX_PHOTOS 10
 
@@ -443,10 +443,10 @@
         [touchFb setObject:@"yes" forKey:@"touchId"];
         [touchFb synchronize];
         
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Security"
-                                                        message:@"Your application is protected Touch Id"
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"الحماية"
+                                                        message:@"هذا التطبيق محمي بواسطة البصمة."
                                                        delegate:self
-                                              cancelButtonTitle:@"OK"
+                                              cancelButtonTitle:@"تم"
                                               otherButtonTitles:nil];
         [alert show];
        
@@ -459,10 +459,10 @@
         [touchFb setObject:@"yes" forKey:@"touchId"];
         [touchFb synchronize];
         
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Security"
-                                                        message:@"Your application is no protected Touch Id"
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"الحماية"
+                                                        message:@"هذا التطبيق محمي بواسطة البصمة."
                                                        delegate:self
-                                              cancelButtonTitle:@"OK"
+                                              cancelButtonTitle:@"تم"
                                               otherButtonTitles:nil];
         [alert show];
         
@@ -477,10 +477,10 @@
     NSString *vip = chekUser[@"membervip"];
     if ([vip isEqualToString:@"novip"]) {
         
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry"
-                                                        message:@"This features available only vip users"
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"عذراً"
+                                                        message:@"هذه الميزة متاحة فقط للمشتركين بالعضوية المميزة."
                                                        delegate:self
-                                              cancelButtonTitle:@"OK"
+                                              cancelButtonTitle:@"تم"
                                               otherButtonTitles:nil];
         [alert show];
 
@@ -497,10 +497,10 @@
     NSString *vip = chekUser[@"membervip"];
     if ([vip isEqualToString:@"novip"]) {
         
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry"
-                                                        message:@"This features available only vip users"
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"عذراً"
+                                                        message:@"هذه الميزة متاحة فقط للمشتركين بالعضوية المميزة."
                                                        delegate:self
-                                              cancelButtonTitle:@"OK"
+                                              cancelButtonTitle:@"تم"
                                               otherButtonTitles:nil];
         [alert show];
         

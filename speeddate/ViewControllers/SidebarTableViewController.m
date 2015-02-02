@@ -300,7 +300,7 @@
         
         SLComposeViewController *mySLComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
         
-        [mySLComposerSheet setInitialText:[NSString stringWithFormat:@"Join the new application. I'm here! Download app  %@", AppUrl]];
+        [mySLComposerSheet setInitialText:[NSString stringWithFormat:@"%@ %@",ShareStr, AppUrl]];
         [mySLComposerSheet addImage:attach];
         
         
@@ -328,7 +328,7 @@
         
         SLComposeViewController *mySLComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
         
-        [mySLComposerSheet setInitialText:[NSString stringWithFormat:@"Join the new application. I'm here! Download app  %@", AppUrl]];
+        [mySLComposerSheet setInitialText:[NSString stringWithFormat:@"%@ %@",ShareStr, AppUrl]];
         
         [mySLComposerSheet addImage:attach];
         
@@ -350,9 +350,9 @@
         if ([MFMailComposeViewController canSendMail]) {
             
             [mail setToRecipients:[NSArray arrayWithObjects:@"email@email.com",nil]];
-            [mail setSubject:@"Subject of Email"];
+            [mail setSubject:@"موضوع الرسالة.."];
             
-            [mail setMessageBody:[NSString stringWithFormat:@"Join the new application. I'm here! Download app  %@", AppUrl] isHTML:NO];
+            [mail setMessageBody:[NSString stringWithFormat:@"%@ %@",ShareStr, AppUrl] isHTML:NO];
             
             
             
@@ -410,7 +410,7 @@
     _documentController = [UIDocumentInteractionController interactionControllerWithURL:[NSURL fileURLWithPath:imagePath]];
     _documentController.delegate=self;
     
-    NSString *captinText = [NSString stringWithFormat:@"Join the new application. I'm here! Download app  %@", AppUrl];
+    NSString *captinText = [NSString stringWithFormat:@"%@ %@",ShareStr, AppUrl];
     _documentController.annotation=[NSDictionary dictionaryWithObjectsAndKeys:captinText,@"InstagramCaption", nil];
     _documentController.UTI = @"com.instagram.exclusivegram";
     

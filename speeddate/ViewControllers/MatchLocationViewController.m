@@ -94,7 +94,7 @@
         self.arrowButton.imageView.image = [UIImage imageNamed:@"arrow"];
         self.searchButton.imageView.image = [UIImage imageNamed:@"magnifying-glass"];
         self.centerButton.backgroundColor = RED_DEEP;
-        annotation.title = @"Your Simulated Location";
+        annotation.title = @"موقعك على الخريطة";
         CLGeocoder* geocoder = [CLGeocoder new];
         CLLocation* location = [[CLLocation alloc]initWithLatitude:self.curUser.geoPoint.latitude longitude:self.curUser.geoPoint.longitude];
         [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
@@ -102,9 +102,9 @@
             UIColor *color = WHITE_COLOR;
             self.searchTextField.attributedPlaceholder =
             [[NSAttributedString alloc]
-             initWithString:[NSString stringWithFormat:@"Simulated Location: %@", placemark.locality]
+             initWithString:[NSString stringWithFormat:@"موقع متوافق: %@", placemark.locality]
              attributes:@{NSForegroundColorAttributeName:color}];
-            [self.centerButton setTitle:[NSString stringWithFormat:@"Simulated Location: %@, %@", placemark.locality, placemark.administrativeArea] forState:UIControlStateNormal];
+            [self.centerButton setTitle:[NSString stringWithFormat:@"موقع متوافق: %@, %@", placemark.locality, placemark.administrativeArea] forState:UIControlStateNormal];
             [self.centerButton setTitleColor:WHITE_COLOR forState:UIControlStateNormal];
             self.centerButton.userInteractionEnabled = YES;
         }];
@@ -122,9 +122,9 @@
             UIColor *color = WHITE_COLOR;
             self.searchTextField.attributedPlaceholder =
             [[NSAttributedString alloc]
-             initWithString:[NSString stringWithFormat:@"Current Location: %@", placemark.locality]
+             initWithString:[NSString stringWithFormat:@"الموقع الحالي: %@", placemark.locality]
              attributes:@{NSForegroundColorAttributeName:color}];
-            [self.centerButton setTitle:[NSString stringWithFormat:@"Current Location: %@, %@", placemark.locality, placemark.administrativeArea] forState:UIControlStateNormal];
+            [self.centerButton setTitle:[NSString stringWithFormat:@"الموقع الحالي: %@, %@", placemark.locality, placemark.administrativeArea] forState:UIControlStateNormal];
             [self.centerButton setTitleColor:WHITE_COLOR forState:UIControlStateNormal];
             self.searchTextField.textAlignment = NSTextAlignmentCenter;
             self.centerButton.userInteractionEnabled = YES;
@@ -173,7 +173,7 @@
         [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
             CLPlacemark* placemark = placemarks.firstObject;
             self.searchTextField.text = @"";
-            self.searchTextField.placeholder = [NSString stringWithFormat:@"Current Location: %@, %@", placemark.locality, placemark.administrativeArea];
+            self.searchTextField.placeholder = [NSString stringWithFormat:@"الموقع الحالي: %@, %@", placemark.locality, placemark.administrativeArea];
             self.searchTextField.textAlignment = NSTextAlignmentCenter;
         }];
         if ([self.curUser.useAddress isEqualToString:@"YES"]) {
@@ -190,7 +190,7 @@
         self.searchTextField.backgroundColor = GRAY_COLOR;
         self.searchTextField.textColor = WHITE_COLOR;
         self.searchTextField.text = @"";
-        self.searchTextField.placeholder = @"Enter a location to match from.";
+        self.searchTextField.placeholder = @"أدخل موقعاً للبحث عن أصدقاء من خلاله.";
     }
 }
 
@@ -257,7 +257,7 @@
         UIColor *color = RED_LIGHT;
         self.searchTextField.attributedPlaceholder =
         [[NSAttributedString alloc]
-         initWithString:[NSString stringWithFormat:@"Current Location: %@, %@", placemark.locality, placemark.administrativeArea]
+         initWithString:[NSString stringWithFormat:@"الموقع الحالي: %@, %@", placemark.locality, placemark.administrativeArea]
          attributes:@{NSForegroundColorAttributeName:color}];
 
         self.searchTextField.textAlignment = NSTextAlignmentCenter;

@@ -55,9 +55,6 @@
     
     NSLog(@"DATA - %@",json);
 
-    
-    
-    
     [self.tableView reloadData];
 
 }
@@ -94,7 +91,7 @@
     NSDictionary *story = [news objectAtIndex:indexPath.row];
 
     cell.nameApp.text = [story objectForKey:@"trackName"];
-    cell.priceApp.text = [NSString stringWithFormat:@"Price: %@",[story objectForKey:@"price"] ];
+    cell.priceApp.text = [NSString stringWithFormat:@"السعر: %@",[story objectForKey:@"price"] ];
     
     [cell.iconApp sd_setImageWithURL:[NSURL URLWithString:[story objectForKey:@"artworkUrl100"]]
                   placeholderImage:[UIImage imageNamed:@"1024_gm.png"]];

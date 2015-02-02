@@ -36,28 +36,28 @@
 {
     [super viewDidLoad];
     self.topLabel.backgroundColor = BLUE_COLOR;
-    UIImageView *backgroundImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background"]];
-    [self.view addSubview:backgroundImage];
-    [self.view sendSubviewToBack:backgroundImage];
+    
     [self customizeView];
     [self setTextDelegates];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardWillHideNotification object:nil];
     
-    [self.checkTerms setImage:[UIImage imageNamed:@"normBtn.png"] forState:UIControlStateNormal];
+    //[self.checkTerms setImage:[UIImage imageNamed:@"normBtn.png"] forState:UIControlStateNormal];
+    
+    _signUpButton.hidden = NO;
     
 }
 
 - (void)customizeView
 {
-    self.nameTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Username" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
-    self.nicknameTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Nick" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
-    self.emailTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Email" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
-    self.passwordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Password" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    self.nameTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"اسم المستخدم" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    self.nicknameTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"الاسم المستعار" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    self.emailTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"البريد الإلكتروني" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    self.passwordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"كلمة المرور" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     [self.signUpButton.layer setBorderWidth:0];
     [self.signUpButton.layer setBorderColor:[UIColor whiteColor].CGColor];
     self.signUpButton.backgroundColor = RED_DEEP;
-    self.signUpButton.hidden = YES;
+    //self.signUpButton.hidden = YES;
 
 
 
@@ -123,17 +123,17 @@
     self.errorMessage = @"";
 
     if ([self.nameTextField.text isEqualToString:@""]) {
-        self.errorMessage = [self.errorMessage stringByAppendingString:@"Missing a username\n"];
+        self.errorMessage = [self.errorMessage stringByAppendingString:@"أدخل إسم المستخدم\n"];
     }
     if ([self.nicknameTextField.text isEqualToString:@""]) {
-        self.errorMessage = [self.errorMessage stringByAppendingString:@"Missing a nickname\n"];
+        self.errorMessage = [self.errorMessage stringByAppendingString:@"أدخل الإسم المستعار\n"];
     }
 
     if ([self.emailTextField.text isEqualToString:@""]) {
-        self.errorMessage = [self.errorMessage stringByAppendingString:@"Missing an email\n"];
+        self.errorMessage = [self.errorMessage stringByAppendingString:@"أدخل البريد الإلكتروني\n"];
     }
     if ([self.passwordTextField.text isEqualToString:@""]) {
-        self.errorMessage = [self.errorMessage stringByAppendingString:@"Missing a password\n"];
+        self.errorMessage = [self.errorMessage stringByAppendingString:@"أدخل كلمة المرور\n"];
     }
 }
 
@@ -149,20 +149,20 @@
     self.theUser.age = [NSNumber numberWithInt:30];
     self.theUser.isMale = @"true";
     self.theUser.membervip = @"novip";
-    self.theUser.desc = @"Hi all))) I am now with you !!!";
+    self.theUser.desc = @"مرحباً بالجميع";
     self.theUser.photo = [PFFile fileWithData:UIImageJPEGRepresentation([UIImage imageNamed:@"placeholderNew"],0.9)];
     [self.theUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             [self performSegueWithIdentifier:@"signup" sender:self];
         } else {
             if (error.code == 202) {
-                self.errorMessage = [NSString stringWithFormat:@"username: %@ already taken", self.nameTextField.text];
+                self.errorMessage = [NSString stringWithFormat:@"إسم المستخدم: %@ موجود مسبقاً", self.nameTextField.text];
             }
             if (error.code == 203) {
-                self.errorMessage = [NSString stringWithFormat:@"email: %@ already taken", self.emailTextField.text];
+                self.errorMessage = [NSString stringWithFormat:@"البريد الإلكتروني: %@ مسجل مسبقاً", self.emailTextField.text];
             }
             if (error.code == 125) {
-                self.errorMessage = [NSString stringWithFormat:@"Please enter a valid email."];
+                self.errorMessage = [NSString stringWithFormat:@"برجاء قم بإدخال بريد إلكتروني صحيح."];
             }
             [self presentErrorMessage];
         }
@@ -171,7 +171,7 @@
 
 -(void)presentErrorMessage
 {
-    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Error" message:self.errorMessage delegate:self cancelButtonTitle:@"Done" otherButtonTitles: nil];
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"خطأ" message:self.errorMessage delegate:self cancelButtonTitle:@"تم" otherButtonTitles: nil];
     alert.backgroundColor = RED_DEEP;
     [alert show];
 }

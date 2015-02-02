@@ -48,9 +48,12 @@
 {
     [super viewDidLoad];
     self.topLabel.backgroundColor = RED_DEEP;
+    
     UIImageView *backgroundImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background"]];
     [self.view addSubview:backgroundImage];
     [self.view sendSubviewToBack:backgroundImage];
+    backgroundImage.frame = [self.view frame];
+    
     [self customizeView];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardWillHideNotification object:nil];
@@ -82,14 +85,14 @@
     NSError *error = nil;
     if ([context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&error]) {
         [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics
-                localizedReason:@"Are you the device owner?"
+                localizedReason:@"هل أنت صاحب هذا الجهاز؟"
                           reply:^(BOOL success, NSError *error) {
                               
                               if (error) {
-                                  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                                                  message:@"There was a problem verifying your identity."
+                                  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"خطأ"
+                                                                                  message:@"هناك خطأ في التأكد من شخصية المستخدم"
                                                                                  delegate:nil
-                                                                        cancelButtonTitle:@"Ok"
+                                                                        cancelButtonTitle:@"تم"
                                                                         otherButtonTitles:nil];
                                   [alert show];
                                   return;
@@ -109,10 +112,10 @@
                                   
                                   
                               } else {
-                                  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                                                  message:@"You are not the device owner."
+                                  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"خطأ أمني"
+                                                                                  message:@"أنت لست صاحب هذا الجهاز"
                                                                                  delegate:nil
-                                                                        cancelButtonTitle:@"Ok"
+                                                                        cancelButtonTitle:@"تم"
                                                                         otherButtonTitles:nil];
                                   [alert show];
                               }
@@ -121,10 +124,10 @@
         
     } else {
         
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                        message:@"Your device cannot authenticate using TouchID."
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"خطأ"
+                                                        message:@"لايمكن مصادقة جهازك بواسطة البصمة."
                                                        delegate:nil
-                                              cancelButtonTitle:@"Ok"
+                                              cancelButtonTitle:@"تم"
                                               otherButtonTitles:nil];
         [alert show];
         
@@ -159,13 +162,13 @@
 {
     NSString* message = @"";
     if ([self.emailTextField.text isEqualToString:@""]) {
-        message = [message stringByAppendingString:@"Blank login field\n"];
+        message = [message stringByAppendingString:@"لايمكن تركه فارغاً\n"];
     }
     if ([self.passwordTextField.text isEqualToString:@""]) {
-        message = [message stringByAppendingString:@"Blank password field\n"];
+        message = [message stringByAppendingString:@"لايمكن تركه فارغاً\n"];
     }
-    message = [message stringByAppendingString:@"Enter valid login credentials"];
-    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Error with login" message:message delegate:self cancelButtonTitle:@"Done" otherButtonTitles: nil];
+    message = [message stringByAppendingString:@"أدخل معلومات دخول صحيحة"];
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"خطأ" message:message delegate:self cancelButtonTitle:@"تم" otherButtonTitles: nil];
     [alert show];
 }
 
@@ -173,8 +176,8 @@
 
 - (void)customizeView
 {
-    self.emailTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Username" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
-    self.passwordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Password" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    self.emailTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"البريد الإلكتروني" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    self.passwordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"كلمة المرور" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     [self.signInButton.layer setBorderColor:[UIColor whiteColor].CGColor];
     [[self.signInButton layer] setBorderWidth:0.0f];
 
@@ -261,14 +264,14 @@
     NSError *error = nil;
     if ([context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&error]) {
         [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics
-                localizedReason:@"Are you the device owner?"
+                localizedReason:@"هل أنت صاحب هذا الجهاز؟"
                           reply:^(BOOL success, NSError *error) {
                               
                               if (error) {
-                                  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                                                  message:@"There was a problem verifying your identity."
+                                  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"خطأ"
+                                                                                  message:@"هناك خطأ في التأكد من شخصية المستخدم"
                                                                                  delegate:nil
-                                                                        cancelButtonTitle:@"Ok"
+                                                                        cancelButtonTitle:@"تم"
                                                                         otherButtonTitles:nil];
                                   [alert show];
                                   return;
@@ -283,7 +286,7 @@
                                //   [alert show];
                                   
                                   
-                                  [ProgressHUD show:@"Signing in..." Interaction:NO];
+                                  [ProgressHUD show:@"تسجيل الدخول..." Interaction:NO];
                                   
                                   [PFFacebookUtils logInWithPermissions:@[@"public_profile", @"email", @"user_friends"] block:^(PFUser *user, NSError *error)
                                    {
@@ -302,10 +305,10 @@
                                   
                                   
                               } else {
-                                  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                                                  message:@"You are not the device owner."
+                                  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"خطأ أمني"
+                                                                                  message:@"أنت لست صاحب هذا الجهاز"
                                                                                  delegate:nil
-                                                                        cancelButtonTitle:@"Ok"
+                                                                        cancelButtonTitle:@"تم"
                                                                         otherButtonTitles:nil];
                                   [alert show];
                               }
@@ -314,14 +317,14 @@
         
     } else {
         
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                        message:@"Your device cannot authenticate using TouchID."
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"خطأ"
+                                                        message:@"لايمكن مصادقة جهازك بواسطة البصمة."
                                                        delegate:nil
-                                              cancelButtonTitle:@"Ok"
+                                              cancelButtonTitle:@"تم"
                                               otherButtonTitles:nil];
         [alert show];
         
-        [ProgressHUD show:@"Signing in..." Interaction:NO];
+        [ProgressHUD show:@"تسجيل الدخول..." Interaction:NO];
         
         [PFFacebookUtils logInWithPermissions:@[@"public_profile", @"email", @"user_friends"] block:^(PFUser *user, NSError *error)
          {
@@ -347,7 +350,7 @@
         
     
     
-    [ProgressHUD show:@"Signing in..." Interaction:NO];
+    [ProgressHUD show:@"تسجيل الدخول..." Interaction:NO];
     
     [PFFacebookUtils logInWithPermissions:@[@"public_profile", @"email", @"user_friends"] block:^(PFUser *user, NSError *error)
      {
@@ -379,7 +382,7 @@
          else
          {
              [PFUser logOut];
-             [ProgressHUD showError:@"Failed to fetch Facebook user data."];
+             [ProgressHUD showError:@"فشل في الحصول على البيانات من فيس بوك."];
          }
      }];
 }
@@ -424,7 +427,7 @@
          user[@"sexuality"] = [NSNumber numberWithInt:2];
          user[@"age"] = [NSNumber numberWithInt:30];
          user[@"isMale"] = @"true";
-         user[@"desc"] = @"Hi all))) I am now with you !!!";
+         user[@"desc"] = @"مرحباً بالجميع";
          user[@"photo"] = filePicture;
          user[PF_USER_FACEBOOKID] = userData[@"id"];
        //  user[PF_USER_FULLNAME] = userData[@"name"];
@@ -452,7 +455,7 @@
                                      failure:^(AFHTTPRequestOperation *operation, NSError *error)
      {
          [PFUser logOut];
-         [ProgressHUD showError:@"Failed to fetch Facebook profile picture."];
+         [ProgressHUD showError:@"فشل في الحصول على صورة لملفك الشخصي من فيس بوك."];
      }];
     //-----------------------------------------------------------------------------------------------------------------------------------------
     [[NSOperationQueue mainQueue] addOperation:operation];
@@ -462,7 +465,7 @@
 - (void)userLoggedIn:(PFUser *)user
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 {
-    [ProgressHUD showSuccess:[NSString stringWithFormat:@"Welcome back %@!", user[PF_USER_NICKNAME]]];
+    [ProgressHUD showSuccess:[NSString stringWithFormat:@"مرحباً مجدداً %@!", user[PF_USER_NICKNAME]]];
    // [self dismissViewControllerAnimated:YES completion:nil];
      [self performSegueWithIdentifier:@"login" sender:self];
     //_startScreen =[[MainViewController alloc]initWithNibName:@"Main" bundle:nil];

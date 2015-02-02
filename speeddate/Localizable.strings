@@ -9,11 +9,11 @@
 
 ///SIDEBAR MENU SECTION
 
-"start_match"      = "Start Match";
-"menu_message"     = "Message";
-"menu_profile"     = "Profile";
-"menu_share"       = "Share&Invite";
-"menu_vip"         = "Vip member";
-"menu_terms"       = "Terms";
-"menu_app"         = "Useful applications";
-"menu_logout"      = "Logout";
+"start_match"      = "إبدأ بالبحث";
+"menu_message"     = "الرسائل";
+"menu_profile"     = "الملف الشخصي";
+"menu_share"       = "مشاركة ودعوة أصدقاء";
+"menu_vip"         = "العضوية المميزة VIP";
+"menu_terms"       = "شروط الإستخدام";
+"menu_app"         = "من تطبيقاتنا";
+"menu_logout"      = "تسجيل الخروج";

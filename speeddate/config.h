@@ -8,7 +8,9 @@
 
 
 ///// link download you app
-#define AppUrl                    @"http://studio76.pro"
+#define AppUrl                    @"https://itunes.apple.com/us/app/khnswlf/id959826970?ls=1&mt=8"
+
+#define ShareStr @"تعرف على أصدقاء وصديقات جدد من نفس منطقتك مع هذا التطبيق المجاني:"
 
 //// on/off animation menu
 #define animationMenu             @"YES"  // YES or NO

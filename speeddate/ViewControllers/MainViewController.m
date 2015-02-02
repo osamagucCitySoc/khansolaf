@@ -175,7 +175,7 @@
     if(![[NSUserDefaults standardUserDefaults] objectForKey:@"first"]) {
         [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"first"];
         [[NSUserDefaults standardUserDefaults] synchronize];
-        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Edit profile" message:@"Please edit your profile before matching" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Edit", nil];
+        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"تعديل الملف الشخصي" message:@"برجاء قم بتعديل ملفك الشخصي حتى يتم البحث عن أصدقاء متوافقين معك." delegate:self cancelButtonTitle:@"إلغاء" otherButtonTitles:@"تعديل", nil];
         [av show];
     }
 }
@@ -206,7 +206,7 @@
     CLGeocoder* geocoder = [CLGeocoder new];
     [geocoder reverseGeocodeLocation:locations.firstObject completionHandler:^(NSArray *placemarks, NSError *error) {
         CLPlacemark* placemark = placemarks.firstObject;
-        self.activityLabel.text = [NSString stringWithFormat:@"Locating :\n %@, %@", placemark.locality, placemark.administrativeArea];
+        self.activityLabel.text = [NSString stringWithFormat:@"تحديد الموقع :\n %@, %@", placemark.locality, placemark.administrativeArea];
         self.activityLabel.textColor = [UIColor whiteColor];
     }];
     [UserParseHelper currentUser].geoPoint = [PFGeoPoint geoPointWithLatitude:self.currentLocation.coordinate.latitude longitude:self.currentLocation.coordinate.longitude];
@@ -275,7 +275,7 @@
         [userQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             [self.posibleMatchesArray addObjectsFromArray:objects];
        
-            self.activityLabel.text = @"No results found";
+            self.activityLabel.text = @"لايوجد نتائج";
             
             if (objects == 0) {
                  [waveLayer setHidden:NO];

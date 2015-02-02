@@ -27,7 +27,7 @@
 {
     [super viewDidLoad];
     
-    self.title = @"Vip membership";
+    self.title = @"العضوية المميزة";
     
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(reload) forControlEvents:UIControlEventValueChanged];
@@ -38,7 +38,7 @@
     [_priceFormatter setFormatterBehavior:NSNumberFormatterBehavior10_4];
     [_priceFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Restore" style:UIBarButtonItemStyleBordered target:self action:@selector(restoreTapped:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"إسترجاع" style:UIBarButtonItemStyleBordered target:self action:@selector(restoreTapped:)];
     
 }
 
@@ -109,7 +109,7 @@
     } else {
         UIButton *buyButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         buyButton.frame = CGRectMake(0, 0, 72, 37);
-        [buyButton setTitle:@"Buy" forState:UIControlStateNormal];
+        [buyButton setTitle:@"شراء" forState:UIControlStateNormal];
         [buyButton setTitleColor:WHITE_COLOR forState:UIControlStateNormal];
         [buyButton setBackgroundColor:RED_DEEP];
         buyButton.tag = indexPath.row;

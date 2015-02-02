@@ -122,7 +122,7 @@
               {
                   _hud = [MBProgressHUD showHUDAddedTo:self.photoScroll animated:YES];
                   _hud.mode = MBProgressHUDModeAnnularDeterminate;
-                  _hud.labelText = @"Loading";
+                  _hud.labelText = @"تحديث..";
                   
                       _hud.progress = (float)  receivedSize/expectedSize;
                   
@@ -295,14 +295,14 @@
 -(IBAction)report:(id)sender{
     
     
-    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"Report this photo" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Report", nil];
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"الإبلاغ عن هذه الصورة" delegate:self cancelButtonTitle:@"إلغاء" destructiveButtonTitle:nil otherButtonTitles:@"إبلاغ", nil];
     [sheet showInView:self.view];
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 0) {
-        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Report" message:@"Are you sure you want to report this user? " delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Report", nil];
+        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"إبلاغ عن المستخدم" message:@"هل أنت متأكد من رغبتك في الإبلاغ عن هذا المستخدم " delegate:self cancelButtonTitle:@"إلغاء" otherButtonTitles:@"إبلاغ", nil];
         [av show];
         
         [self reportUserPhoto];

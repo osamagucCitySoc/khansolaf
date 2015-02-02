@@ -58,7 +58,7 @@
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
     self.navigationController.navigationBar.barTintColor = RED_LIGHT;
-    self.navigationItem.title = @"Speed Dating";
+    self.navigationItem.title = @"الحصول السريع على موعد";
     
     self.photoArray =[[NSMutableArray alloc]init];
     
@@ -132,7 +132,7 @@
     if(![[NSUserDefaults standardUserDefaults] objectForKey:@"first"]) {
         [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"first"];
         [[NSUserDefaults standardUserDefaults] synchronize];
-        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Edit profile" message:@"Please edit your profile before matching" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Edit", nil];
+        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"تعديل الملف الشخصي" message:@"برجاء قم بتعديل ملفك الشخصي حتى يتم البحث عن أصدقاء متوافقين معك." delegate:self cancelButtonTitle:@"إلغاء" otherButtonTitles:@"تعديل", nil];
         [av show];
     }
 }

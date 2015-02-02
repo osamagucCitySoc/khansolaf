@@ -75,7 +75,7 @@
 
 - (IBAction)actionPressed:(UIBarButtonItem *)sender
 {
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Save&Copy" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Save",@"Copy", nil];
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"حفظ | نسخ" delegate:self cancelButtonTitle:@"إلغاء" destructiveButtonTitle:nil otherButtonTitles:@"حفظ",@"نسخ", nil];
     actionSheet.delegate = self;
     [actionSheet showInView:self.view];
 }

@@ -21,8 +21,6 @@
     [signUpController dismissViewControllerAnimated:YES completion:nil];
 }
 
-
-
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user
 
 {

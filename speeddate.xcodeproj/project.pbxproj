@@ -14,6 +14,10 @@
 		0BA4ECBB19AE232600302E92 /* CustomSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BA4ECBA19AE232600302E92 /* CustomSignInViewController.m */; };
 		0BAE8A9A19BBBD75009B3A52 /* MatchLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BAE8A9919BBBD75009B3A52 /* MatchLocationViewController.m */; };
 		0BAE8A9C19BBC0F4009B3A52 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BAE8A9B19BBC0F4009B3A52 /* MapKit.framework */; };
+		1E75E5D31A7FADD00070B718 /* h-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E75E5D01A7FADD00070B718 /* h-icon.png */; };
+		1E75E5D41A7FADD00070B718 /* h-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E75E5D11A7FADD00070B718 /* h-icon@2x.png */; };
+		1E75E5D51A7FADD00070B718 /* h-icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E75E5D21A7FADD00070B718 /* h-icon@3x.png */; };
+		1EAA2B671A72601600EA8AE4 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EAA2B661A72601600EA8AE4 /* Launch Screen.xib */; };
 		42236F2619B7DEEE00539466 /* CBetterCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42236F1B19B7DEEE00539466 /* CBetterCollectionViewCell.m */; };
 		42236F2719B7DEEE00539466 /* CBetterCollectionViewLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 42236F1D19B7DEEE00539466 /* CBetterCollectionViewLayoutAttributes.m */; };
 		42236F2919B7DEEE00539466 /* CInterpolator.mm in Sources */ = {isa = PBXBuildFile; fileRef = 42236F2119B7DEEE00539466 /* CInterpolator.mm */; };
@@ -181,6 +185,10 @@
 		0BAE8A9819BBBD75009B3A52 /* MatchLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MatchLocationViewController.h; path = ViewControllers/MatchLocationViewController.h; sourceTree = "<group>"; };
 		0BAE8A9919BBBD75009B3A52 /* MatchLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MatchLocationViewController.m; path = ViewControllers/MatchLocationViewController.m; sourceTree = "<group>"; };
 		0BAE8A9B19BBC0F4009B3A52 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		1E75E5D01A7FADD00070B718 /* h-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "h-icon.png"; sourceTree = "<group>"; };
+		1E75E5D11A7FADD00070B718 /* h-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "h-icon@2x.png"; sourceTree = "<group>"; };
+		1E75E5D21A7FADD00070B718 /* h-icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "h-icon@3x.png"; sourceTree = "<group>"; };
+		1EAA2B661A72601600EA8AE4 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		42236F1A19B7DEEE00539466 /* CBetterCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBetterCollectionViewCell.h; sourceTree = "<group>"; };
 		42236F1B19B7DEEE00539466 /* CBetterCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBetterCollectionViewCell.m; sourceTree = "<group>"; };
 		42236F1C19B7DEEE00539466 /* CBetterCollectionViewLayoutAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBetterCollectionViewLayoutAttributes.h; sourceTree = "<group>"; };
@@ -216,7 +224,7 @@
 		4283BD8519BCB83A00AD1F63 /* Report.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Report.m; path = Model/Report.m; sourceTree = "<group>"; };
 		42BD2AFC19AE5A1B00FCC817 /* UserTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserTableViewCell.h; path = View/UserTableViewCell.h; sourceTree = "<group>"; };
 		42BD2AFD19AE5A1B00FCC817 /* UserTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserTableViewCell.m; path = View/UserTableViewCell.m; sourceTree = "<group>"; };
-		42DBCC2719AC20BB00CE6C93 /* speeddate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = speeddate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		42DBCC2719AC20BB00CE6C93 /* Arab Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Arab Chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42DBCC2A19AC20BB00CE6C93 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		42DBCC2C19AC20BB00CE6C93 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		42DBCC2E19AC20BB00CE6C93 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -526,7 +534,7 @@
 		42DBCC2819AC20BB00CE6C93 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				42DBCC2719AC20BB00CE6C93 /* speeddate.app */,
+				42DBCC2719AC20BB00CE6C93 /* Arab Chat.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -576,6 +584,7 @@
 				4281F25219B11CF7007724C6 /* Menu.xcassets */,
 				42F5B28519B0C4CB0036938B /* Chat.xcassets */,
 				C20F0B1A19D7E982005958C0 /* Main.storyboard */,
+				1EAA2B661A72601600EA8AE4 /* Launch Screen.xib */,
 				42DBCC3119AC20BB00CE6C93 /* Supporting Files */,
 			);
 			path = speeddate;
@@ -766,6 +775,9 @@
 		C20F0B1719D7CE72005958C0 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				1E75E5D01A7FADD00070B718 /* h-icon.png */,
+				1E75E5D11A7FADD00070B718 /* h-icon@2x.png */,
+				1E75E5D21A7FADD00070B718 /* h-icon@3x.png */,
 				C28D423119E738F500C00ACA /* Ache.caf */,
 				C25E747419EAD3F000779C23 /* birthday2@2x.png */,
 				C25E765B19EF767B00779C23 /* fastd.jpg */,
@@ -1003,7 +1015,7 @@
 			);
 			name = speeddate;
 			productName = Tinder;
-			productReference = 42DBCC2719AC20BB00CE6C93 /* speeddate.app */;
+			productReference = 42DBCC2719AC20BB00CE6C93 /* Arab Chat.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1048,15 +1060,19 @@
 				C25E747519EAD3F000779C23 /* birthday2@2x.png in Resources */,
 				C25E748019EC01F400779C23 /* profile_menu@2x.png in Resources */,
 				C25E765319EF754600779C23 /* fbshare.png in Resources */,
+				1EAA2B671A72601600EA8AE4 /* Launch Screen.xib in Resources */,
 				C25E765A19EF759700779C23 /* 1024_gm.png in Resources */,
 				42DBCC3519AC20BB00CE6C93 /* InfoPlist.strings in Resources */,
+				1E75E5D31A7FADD00070B718 /* h-icon.png in Resources */,
 				C25E748419EC03AD00779C23 /* logout_menu@2x.png in Resources */,
 				426107DF19B42D930000536C /* buttonbar.xcassets in Resources */,
 				C25E747119E8981200779C23 /* about@2x.png in Resources */,
+				1E75E5D51A7FADD00070B718 /* h-icon@3x.png in Resources */,
 				C25E747319E898D600779C23 /* genderz@2x.png in Resources */,
 				C20F0B1B19D7E982005958C0 /* Main.storyboard in Resources */,
 				C2CC355A19F58ACD00AC86D1 /* mask_profile.png in Resources */,
 				42F5B28619B0C4CB0036938B /* Chat.xcassets in Resources */,
+				1E75E5D41A7FADD00070B718 /* h-icon@2x.png in Resources */,
 				C2A90EBC19F41C1E00FC0D04 /* down2@2x.png in Resources */,
 				C25E765619EF754600779C23 /* maiz.png in Resources */,
 				C25E760219EF485200779C23 /* terms_menu@2x.png in Resources */,
@@ -1297,12 +1313,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "speeddate/speeddate-Prefix.pch";
 				INFOPLIST_FILE = "speeddate/speeddate-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/speeddate",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = speeddate;
+				PRODUCT_NAME = "Arab Chat";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1322,12 +1339,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "speeddate/speeddate-Prefix.pch";
 				INFOPLIST_FILE = "speeddate/speeddate-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/speeddate",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = speeddate;
+				PRODUCT_NAME = "Arab Chat";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};

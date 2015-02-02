@@ -472,7 +472,7 @@
 
 - (IBAction)actionPressed:(id)sender
 {
-    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Report",@"Unmatch", nil];
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"" delegate:self cancelButtonTitle:@"إلغاء" destructiveButtonTitle:nil otherButtonTitles:@"إبلاغ",@"لسنا متوافقين", nil];
     [sheet showInView:self.view];
 }
 
@@ -502,7 +502,7 @@
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 0) {
-        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Report" message:@"Are you sure you want to report this user? The conversation will be deleted." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Report", nil];
+        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"إبلاغ" message:@"هل أنت متأكد من رغبتك في الإبلاغ عن هذا المستخدم؟ سيتم حذف هذه المحادثة." delegate:self cancelButtonTitle:@"إلغاء" otherButtonTitles:@"إبلاغ", nil];
         [av show];
     }
     if (buttonIndex == 1) {
